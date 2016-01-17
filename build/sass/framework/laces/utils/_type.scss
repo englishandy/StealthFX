@@ -1,0 +1,82 @@
+$includeDefaultFontStack: true !default;
+//Figure out if the default fonts will be used
+@if $includeDefaultFontStack==true {
+    // Import Default font
+    @import url(https://fonts.googleapis.com/css?family=Raleway:400,300,600,700);
+    // Set Default font
+    $defaultFontStack: 'Raleway', 'Helvetica', sans-serif;
+}
+
+// If not used Default back to sans serif
+@else {
+    $defaultFontStack: sans-serif;
+}
+
+$browser-context: 16; // Default
+@function em($pixels, $context: $browser-context) {
+    @return #{$pixels/$context}em;
+}
+
+@mixin responsiveText() {
+    html {
+        font-size: calc(12px + 9 * ( (100vw - 420px) / 860));
+    }
+}
+$useResponsiveText: true !default;
+@if $useResponsiveText == true {
+    @include responsiveText();    
+}
+
+//Font-Weights
+$weightLight: 300 !default;
+$weightNormal: 400 !default;
+$weightSemiBold: 600 !default;
+$weightBold: 700 !default;
+// Font Size
+// H1
+$header: em(60) !default;
+// H2
+$subHeaderLarger: em(55) !default;
+// H3
+$subHeaderLarge:em(50) !default;
+// H4
+$subHeader:em(45) !default;
+// H5
+$subHeaderSmall: em(40) !default;
+// H6
+$subHeaderSmaller: em(35) !default;
+// Default Text Size
+$defaultSize: em(18) !default;
+//Default Font Styles
+$defaultGlobalStack: ( 
+ h1 $defaultFontStack $weightBold $header,
+ h2 $defaultFontStack $weightSemiBold $subHeaderLarger,
+ h3 $defaultFontStack $weightSemiBold $subHeaderLarge,
+ h4 $defaultFontStack $weightSemiBold $subHeader, 
+ h5 $defaultFontStack $weightSemiBold $subHeaderSmall, 
+ h6 $defaultFontStack $weightSemiBold $subHeaderSmaller, 
+ p $defaultFontStack $weightLight $defaultSize, 
+ a $defaultFontStack $weightLight $defaultSize, 
+ span $defaultFontStack $weightLight $defaultSize, 
+ li $defaultFontStack $weightNormal $defaultSize, 
+ input $defaultFontStack $weightNormal $defaultSize, 
+ textarea $defaultFontStack $weightNormal $defaultSize);
+
+@each $value in $defaultGlobalStack {
+    #{nth($value, 1)} {
+        font-family: nth($value, 2);
+        font-weight: nth($value, 3);
+        font-size: nth($value, 4);
+        transition: all ease 0.5s;
+    }
+}
+html{
+    color: $greyDark;
+}
+a {
+    color: $colorBlue;
+    text-decoration: none;
+    &:hover {
+        color: $colorLightBlue;
+    }
+}

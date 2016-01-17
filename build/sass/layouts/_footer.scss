@@ -1,0 +1,39 @@
+.footer{
+	background: $darkBlue;
+	color: white;
+	display: flex;
+	flex-wrap: wrap;
+	// position: absolute;
+	bottom: 0;
+	width: 100%;
+	margin-top: 3%;
+	padding: em(20) em(30);
+	align-items: center;
+	justify-content: space-between;
+	@include responsive(xs) {
+		flex-direction: column;
+		justify-content: flex-start;
+		h6{
+			width: 80%;
+			text-align: left;
+			font-size: em(20);
+		}
+	}
+	.fa {
+		padding: 0 em(3);
+	}
+	a{
+		color: $lightBlue;
+		&:hover{
+			color: darken($lightBlue, 10%);
+		}
+	}
+	h6{
+		font-size: em(16);
+	}
+}
+.fork,.follow{
+	a{
+		padding-left: em(3);
+	}
+}

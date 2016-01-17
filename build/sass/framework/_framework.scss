@@ -1,0 +1,19 @@
+/* Orbital Framework is a sass framework built off the foundation of other frameworks.
+
+*/
+
+//This framework is designed to be modular in every sense.
+//If you would rather not use part of this framework simply comment out the respective "@import"
+// Settings
+@import 'laces/_settings.scss';
+
+// Utils
+@import 'laces/utils/_normalize.scss';
+@import 'laces/utils/_clearfix.scss';
+@import 'laces/utils/_responsive.scss';
+@import 'laces/colors/_colors.scss';
+@import 'laces/utils/_type.scss';
+
+// Grid
+// @import 'laces/grid/_flex-grid.scss';
+

@@ -1,0 +1,36 @@
+.header{
+	align-items: center;
+	background: $darkBlue;
+	color: white;
+	display: flex;
+	flex-wrap:wrap;
+	padding: em(20) em(30);
+	justify-content: space-between;
+	@include responsive(xs){
+		flex-direction: row;
+		.desc{
+			width: 100%;
+		}
+	}
+}
+.mainHeader{
+	font-size: em(30);
+	font-weight: 300;
+	margin: 0 auto 0 0;
+	span{
+		font-weight: 700;
+		color: $coralRed;
+	}
+	&:after{
+		content: 'Alpha';
+		font-weight: 700;
+		font-size: em(5);
+		display: block;
+		@include responsive(xs){
+			font-size: em(7);
+		}
+	}
+}
+.desc h6{
+	font-size: em(20);
+}

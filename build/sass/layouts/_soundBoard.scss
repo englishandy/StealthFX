@@ -1,0 +1,62 @@
+.pill,
+.pillButton,
+.command {
+    display: flex;
+}
+.pillButton,.command{
+	align-items:center;
+}
+
+.pill {
+    border-radius: 100px;
+    width: 50%;
+    background: white;
+    margin: 0 auto;
+    margin-top: 5%;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
+    @include responsive(sm){
+    	width: 80%;
+    }
+    @include responsive(xs){
+    	width: 100%;
+    	border-radius: 0;
+    }
+    .pillButton {
+        color: white;
+        cursor: pointer;
+        width: 20%;
+        justify-content: center;
+    }
+    .command {
+        width: 60%;
+        p {
+            padding-left: 1em;
+            text-align: left;
+        }
+        @include responsive(xs){
+        	font-size: em(25);
+        }
+    }
+    .copy,
+    .tooltipBlue {
+        background: $darkBlue;
+    }
+    .preview,
+    .tooltipRed {
+        background: $coralRed;
+    }
+    .preview {
+        border-radius: 0 100px 100px 0;
+        margin: 0;
+        @include responsive(xs){
+        	border-radius: 0;
+        }
+    }
+    .material-icons{
+    	pointer-events: none;
+    }
+}
+
+.tooltip {
+    display: none;
+}

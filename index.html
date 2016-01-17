@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons|Roboto:300,700">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="css/main.css">
+  </head>
+  <body>
+    <header class="header">
+      <div class="logo"></div>
+      <h1 class="mainHeader">Stealth<span>FX</span></h1>
+      <div class="desc">
+        <h6> A web app that plays sounds and stuff</h6>
+      </div>
+    </header>
+    <div id="soundBoard" v-for="item in items">
+      <div class="pill"><span class="command">
+          <p>{{item.message}}</p></span><span class="copy pillButton">
+          <p class="material-icons">content_copy</p>
+          <div class="tooltip tooltipBlue">
+            <p>Copy Command</p>
+          </div></span><span id="pill" v-on:click="getEL" class="preview pillButton">
+          <p class="material-icons">play_arrow</p>
+          <audio src="{{item.audioSrc}}"></audio>
+          <div class="tooltip tooltipRed">
+            <p>Play Sound</p>
+          </div></span></div>
+    </div>
+    <footer class="footer">
+      <h6 class="author">Made with<span class="fa fa-heart"></span><a href="#">By James</a></h6>
+      <h6 class="fork">Wanna help?<a href="#">Check the Github</a></h6>
+      <h6 class="follow">Follow me<a href="#">on Twitch</a></h6>
+    </footer>
+    <!-- KEEP AT BOTTOM NO MATTER WHAT-->
+    <script src="js/main.js"></script>
+  </body>
+</html>

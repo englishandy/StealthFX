@@ -1,0 +1,16 @@
+$xs: 500px;
+$sm: 768px;
+$md: 992px;
+$lg: 1200px;
+
+@mixin responsive($point){
+	@if $point == xs{
+		@media (max-width: $xs){ @content ; }
+	} @else if $point == sm {
+		@media (max-width: $sm){ @content ; }
+	} @else if $point == md {
+		@media (max-width: $md){ @content ; }
+	} @else if $point == lg {
+		@media (max-width: $lg) { @content ; }
+	}
+}
