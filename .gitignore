@@ -2,3 +2,5 @@ node_modules/
 gulpfile.js
 .DS_Store
 .sublime-gulp.cache
+build/
+package.json
