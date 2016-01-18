@@ -4,11 +4,11 @@
 //- 	audio(src='/build/sounds/patrick.mp3')
 
 //- ****************** KEEP AUDIO SOURCE *********************
-#soundBoard(v-for='item in items')
-	.pill
+#soundBoard
+	.pill(v-for='item in items')
 		span.command
 			p {{item.message}}
-		span.copy.pillButton
+		span.copy.pillButton(data-clipboard-text='{{item.message}}')
 			p.material-icons content_copy
 			.tooltip.tooltipBlue
 				p Copy Command

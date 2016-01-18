@@ -4,3 +4,32 @@
 @import 'layouts/_header';
 @import 'layouts/_footer';
 @import 'layouts/_soundBoard';
+#success,
+#err {
+    color: #fff;
+    pointer-events: none;
+    opacity: 1;
+    transition: all ease-in 0.8s;
+    position: fixed;
+    top: -50vh;
+    width: 100%;
+    z-index: 100;
+    margin: 0;
+    padding: em(5);
+    p {
+        // font-size: em(10);
+        padding-left: 3%;
+    }
+}
+
+#success {
+    background: #2ecc71;
+    box-shadow: 0 10px 0 darken(#2ecc71, 5%);
+}
+
+#err {
+	// top: 0;
+	background: $coralRed;
+	box-shadow: 0 10px 0 darken($coralRed, 10%);
+    // display: none;
+}
