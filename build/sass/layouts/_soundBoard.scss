@@ -57,6 +57,9 @@
     .copy{
     	&:hover{
     		background: lighten($darkBlue, 10%);
+            .tooltipBlue{
+                opacity: 1;
+            }
     	}
     }
     .preview {
@@ -67,7 +70,13 @@
         }
         &:hover{
         	background: lighten($coralRed, 10%);
+            .tooltipRed{
+                opacity: 1;
+            }
         }
+    }
+    .copy, .preview{
+        position: relative;
     }
     .material-icons{
     	pointer-events: none;
@@ -75,5 +84,14 @@
 }
 
 .tooltip {
-    display: none;
+    border-radius: 10px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.5);
+    position: absolute;
+    left: 0;
+    right: 0;
+    font-size: em(10);
+    text-align: center;
+    top: em(100);
+    opacity: 0;
+    transition: all ease 0.5s;
 }
